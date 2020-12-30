@@ -1,0 +1,74 @@
+export class Media {
+    constructor(data: any, options: any, language: any);
+    _el: {
+        container: {};
+        content_container: {};
+        content: {};
+        content_item: {};
+        content_link: {};
+        caption: any;
+        credit: any;
+        parent: {};
+        link: any;
+    };
+    player: any;
+    timer: any;
+    load_timer: NodeJS.Timeout;
+    message: Message;
+    media_id: any;
+    _state: {
+        loaded: boolean;
+        show_meta: boolean;
+        media_loaded: boolean;
+    };
+    data: {
+        unique_id: any;
+        url: any;
+        credit: any;
+        caption: any;
+        credit_alternate: any;
+        caption_alternate: any;
+        link: any;
+        link_target: any;
+    };
+    options: {
+        api_key_flickr: string;
+        api_key_googlemaps: string;
+        api_key_embedly: string;
+        credit_height: number;
+        caption_height: number;
+        background: number;
+    };
+    animator: {};
+    loadMedia(): void;
+    _updateMessage(msg: any): void;
+    loadingMessage(): void;
+    errorMessage(msg: any): void;
+    updateMediaDisplay(layout: any): void;
+    _loadMedia(): void;
+    _updateMediaDisplay(l: any): void;
+    _getMeta(): void;
+    _getImageURL(w: any, h: any): string;
+    show(): void;
+    hide(): void;
+    addTo(container: any): void;
+    removeFrom(container: any): void;
+    getImageURL(w: any, h: any): string;
+    updateDisplay(w: any, h: any, l: any): void;
+    stopMedia(): void;
+    loadErrorDisplay(message: any): void;
+    onLoaded(error: any): void;
+    onMediaLoaded(e: any): void;
+    showMeta(credit: any, caption: any): void;
+    getMeta(): void;
+    updateMeta(): void;
+    onAdd(): void;
+    onRemove(): void;
+    _initLayout(): void;
+    _updateDisplay(w: any, h: any, l: any): void;
+    domCreate(...params: any[]): any;
+    _stopMedia(): void;
+}
+import { Text } from "@knight-lab/timelinejs/src/js/media/types/Text";
+import Message from "@knight-lab/timelinejs/src/js/ui/Message";
+export { Text };
